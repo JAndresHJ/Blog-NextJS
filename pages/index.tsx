@@ -3,7 +3,7 @@ import Hero from '../components/home/Hero';
 import { Fragment } from 'react';
 import { NextPage } from 'next';
 
-const DUMMY_POSTS = [
+export const DUMMY_POSTS = [
   {
     title: 'Getting Started with NextJS',
     image: 'getting-started-nextjs.png',

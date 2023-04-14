@@ -9,3 +9,7 @@ export interface Post {
 export interface PostItemProps {
   post: Post;
 }
+
+export interface PostsGridProps {
+  posts: Post[];
+}
