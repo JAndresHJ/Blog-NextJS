@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import { getFeaturedPosts } from '@/lib/postsUtil';
 import { Post } from '@/components/posts/PostsTypes';
+import Head from 'next/head';
 
 interface HomeProps {
   posts: Post[];
@@ -12,6 +13,13 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = (props) => {
   return (
     <Fragment>
+      <Head>
+        <title>Andres' Blog</title>
+        <meta
+          name='description'
+          content='I post about programming and web development'
+        />
+      </Head>
       <Hero />
       <FeaturedPosts posts={props.posts} />
     </Fragment>

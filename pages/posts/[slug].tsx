@@ -1,6 +1,7 @@
 import PostContent from '@/components/posts/PostDetail/PostContent';
 import { PostData, getPostData, getPostsFiles } from '@/lib/postsUtil';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 
 interface Params extends ParsedUrlQuery {
@@ -12,7 +13,15 @@ export interface PostDetailProps {
 }
 
 const PostDetailPage: NextPage<PostDetailProps> = (props) => {
-  return <PostContent post={props.post} />;
+  return (
+    <>
+      <Head>
+        <title>{props.post.title}</title>
+        <meta name='description' content={props.post.excerpt} />
+      </Head>
+      <PostContent post={props.post} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps<PostDetailProps, Params> = (
