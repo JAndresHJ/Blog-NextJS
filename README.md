@@ -36,3 +36,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Environmental Variables
+
+To run this project, you need to set up the following environmental variables:
+
+- `MONGODB_USERNAME`: The username for your MongoDB account.
+- `MONGODB_PASSWORD`: The password for your MongoDB account.
+
+To set up these variables, follow these steps:
+
+1. Open your terminal or command prompt.
+2. Navigate to the root directory of your project.
+3. Create a new file called `.env.local` in the root directory of your project.
+4. In the `.env.local` file, add the following lines:
+
+```
+  MONGODB_USERNAME=your-username-here
+  MONGODB_PASSWORD=your-password-here
+```
+
+5. Replace `your-username-here` and `your-password-here` with your actual MongoDB username and password, respectively.
+6. Save the `.env.local` file.
+7. Restart your project.
+
+After completing these steps, your project should be able to access the `MONGODB_USERNAME` and `MONGODB_PASSWORD` environmental variables, which are necessary to connect to your MongoDB database.

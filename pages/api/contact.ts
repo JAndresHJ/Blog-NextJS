@@ -36,10 +36,10 @@ export default async function handler(
 
     let client;
     // Store in DB
+    const connectionString = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.mongodb_clustername}.iqoj3zx.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
     try {
-      client = await MongoClient.connect(
-        'mongodb+srv://jandreshdzj:<>@cluster0.iqoj3zx.mongodb.net/blog-nextjs?retryWrites=true&w=majority'
-      );
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       res.status(500).json({ response: 'Could not connect to database' });
       return;
