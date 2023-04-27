@@ -14,7 +14,7 @@ const Home: NextPage<HomeProps> = (props) => {
   return (
     <Fragment>
       <Head>
-        <title>Andres' Blog</title>
+        <title>Andres`&apos;` Blog</title>
         <meta
           name='description'
           content='I post about programming and web development'
