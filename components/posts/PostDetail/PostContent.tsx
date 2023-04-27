@@ -6,8 +6,13 @@ import { PostDetailProps } from '@/pages/posts/[slug]';
 import { Components } from 'react-markdown';
 import Image from 'next/image';
 import { Element } from 'react-markdown/lib/ast-to-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import coldarkDark from 'react-syntax-highlighter/dist/cjs/styles/prism/coldark-dark';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
+
+SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage('css', css);
 
 const PostContent: FC<PostDetailProps> = ({ post }) => {
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
